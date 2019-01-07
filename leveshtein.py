@@ -19,11 +19,11 @@ def levenshtein_distance_description(s1, s2):
 	s = ""
 	i = len(s1)
 	j = len(s2)
-	while (i > 0 and j > 0):
-		if i == 0:
+	while i > 0 or j > 0:
+		if j == 0:
 			i -= 1
 			s += "D"
-		elif j == 0:
+		elif i == 0:
 			j -= 1
 			s += "I"
 		elif s1[i-1] == s2[j-1] and l[j-1][i-1] == l[j][i]:
@@ -41,3 +41,5 @@ def levenshtein_distance_description(s1, s2):
 			i -= 1
 			s += "D"
 	return s[::-1]
+
+print(levenshtein_distance_description("aaaa", ""))
