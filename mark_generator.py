@@ -25,7 +25,9 @@ def gen_mark_from_file(file, key_size, word_size):
     t = file.read()
     text = list(t)
     mark = gen_mark(text, key_size, word_size)
+    return mark
 
 def gen_mark_from_str(string, key_size, word_size):
     text = list(t)
     mark = gen_mark(text, key_size, word_size)
+    return mark
