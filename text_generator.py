@@ -31,7 +31,9 @@ def gen_text(mark, length):
                 words.append(new_word)
     if quantum_type == 'word':
         ret = ' '.join(words)
-        for sgn in punctuation:
+        for sgn in '.!?,;:)]}':
             ret = ret.replace(' ' + sgn, sgn)
+        for sgn in '([{':
+            ret = ret.replace(sgn + ' ', sgn)
         return ret
     return "".join(words)
